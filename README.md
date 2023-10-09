@@ -3,13 +3,13 @@
 <p align="center">memos-ai-plug-in，通过Memos API提取内容关键词，AI生成分析报告</p>
 <p align="center">AI文本能力</p>
 
-### 🔧工具包
+### 🔧 工具包
 
 - jieba
 - openai
 - requests
 
-### 📃文件结构
+### 📃 文件结构
 
 - config.json，存放项目的配置参数
 
@@ -25,11 +25,8 @@
 
 ### :rocket: 使用方法
 
-1. 修改config.json文件，将OpenApi、ApiKey、AiProxy替换成自己的参数
+1. 修改 config.json 文件，将 OpenApi、ApiKey、AiProxy 替换成自己的参数
 
-   <img src="/Users/liangyuliang/Library/Application Support/typora-user-images/image-20231009213119322.png" alt="image-20231009213119322" style="zoom:50%;" />
+2. 在 main.go 文件中启动 python
 
-2. 在main.go文件中启动python
-
-3. result.json中查看分析结果
-
+3. result.json 中查看分析结果
