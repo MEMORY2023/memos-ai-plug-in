@@ -8,6 +8,7 @@
 - jieba
 - openai
 - requests
+- json
 
 ### 📃 文件结构
 
