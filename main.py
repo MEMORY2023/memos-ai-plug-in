@@ -23,6 +23,7 @@ if __name__ == "__main__":
     result["brain storms"] = []
     for i in range(5):
         keyword = keywords[i]["keyword"]
+        print("头脑风暴关于", keyword)
         context = "头脑风暴关于" + keyword
         res_json = gpt.sendGPT(CONFIG, context)
         # 将json字符串反序列化为dict对象，便于后续操作

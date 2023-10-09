@@ -1,56 +1,35 @@
-## json 数据的处理
+<p align="center"><a href="https://usememos.com"><img height="64px" src="https://raw.githubusercontent.com/BarryYangi/MemosGallery/master/public/logo-full.webp" alt="✍️ memos" /></a></p>
 
-学习地址：https://zhuanlan.zhihu.com/p/524972433
+<p align="center">memos-ai-plug-in，通过Memos API提取内容关键词，AI生成分析报告</p>
+<p align="center">AI文本能力</p>
 
-### 反序列化
+### 🔧工具包
 
-将 json 字符串转换成 dic 对象
+- jieba
+- openai
+- requests
 
-```
-person_str = '{"name": "blueberry", "age": 4, "hobbies": ["eat", "sleep"]}'
-person_dict = json.loads(person_str)
-pprint.pprint(person_dict)
-pprint.pprint(type(person_dict))
-```
+### 📃文件结构
 
-### 序列化
+- config.json，存放项目的配置参数
 
-将 dic 对象转换成 json 字符串
+- gpt.py，处理与 gpt 的交互
 
-```
-blueberry_dict = {
-    "name": "blueberry",
-    "age":4,
-    "hobbies": ["eat","sleep"]
-}
-blueberry_json_str = json.dumps(blueberry_dict)
-pprint.pprint(blueberry_json_str)
-pprint.pprint(type(blueberry_json_str))
-```
+- loadData.py，处理获取 memos 数据源，加载 config.json 配置文件的配置参数
 
-## 文件结构
+- getKeyWords.py，对记录内容进行分词，提取关键词。最后在所有内容中提取出 top5 频次的关键词
 
-### config.json 文件
+- getKeyWordsByRow.py，对记录内容进行分词，提取关键词。在每一行内容中提取出 top5 频次的关键词
 
-存放项目的配置参数
+- result.json，运行结果保存在 result.json 文件中，自动生成
 
-### gpt.py 文件
+### :rocket: 使用方法
 
-处理与 gpt 的交互
+1. 修改config.json文件，将OpenApi、ApiKey、AiProxy替换成自己的参数
 
-### loadData.py 文件
+   <img src="/Users/liangyuliang/Library/Application Support/typora-user-images/image-20231009213119322.png" alt="image-20231009213119322" style="zoom:50%;" />
 
-处理获取 memos 数据源
-加载 config.json 配置文件的配置参数
+2. 在main.go文件中启动python
 
-### getKeyWords.py 文件
+3. result.json中查看分析结果
 
-对记录内容进行分词，提取关键词。最后在所有内容中提取出 top5 频次的关键词
-
-### getKeyWordsByRow.py 文件
-
-对记录内容进行分词，提取关键词。在每一行内容中提取出 top5 频次的关键词
-
-### result.json 文件
-
-运行结果保存在 result.json 文件中，自动生成
