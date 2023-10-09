@@ -1,0 +1,6 @@
+{
+  "OpenApi": "填写自己的memos openapi",
+  "ApiKey": "填写自己的apikey",
+  "AiProxy": "填写自己的ai proxy地址",
+  "ResultFileName": "result.json"
+}
